@@ -1,17 +1,17 @@
-## Commands for deployment Flask application in Ubuntu
-```shell
-sudo apt update
-sudo apt -y install python3 python3-dev gcc python3-flask python3-pip
+1. Создал веб сервер на flask
+2. Отладил и настроил
+3. Создал репозиторий и сделал push своего веб сервера
+4. Создал Dockerfile и собрал свой образ flask
+5. Сделал push своего образа в dockerhub
+  
+ login: `admin` 
+ pw: `secret`
+ 
+ Сборка
+ ```
+sudo docker build -t TAG .
 ```
-## Commands for deployment Flask application
-```shell
-cd webservice
-pip install -r requirements.txt
-export FLASK_APP=webservice.py
-export FLASK_ENV=development
-flask run -p 5050
+ Запуск
+ ```
+ sudo docker run -it -p 8080:80 IMAGE_TAG
 ```
-- username: `admin`
-- password: `secret`
-
-> To enable Authentication again after success login clear the browser cache.
